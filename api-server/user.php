@@ -3,10 +3,7 @@
   require_once 'db.php';
   
   // vamos a devolver un formato JSON
-  header('Access-Control-Allow-Origin: *');
-  header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-  header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-  header('content-type: application/json; charset=utf-8');
+  header('Content-Type: application/json');
 
   // métodos HTTP permitidos
   $method = $_SERVER['REQUEST_METHOD'];
@@ -35,19 +32,19 @@
               echo json_encode($response);
             }else {
               http_response_code(401);
-              echo json_encode(['message' => 'Usuario no activado']);  
+              echo json_encode(['error' => 'Usuario no activado']);  
             }
           }else {
             http_response_code(401);
-            echo json_encode(['message' => 'Usuario y/o contraseña erroneos']);      
+            echo json_encode(['error' => 'Usuario y/o contraseña erroneos']);      
           }
         }else {
           http_response_code(401);
-          echo json_encode(['message' => 'Contraseña no puede estar vacia']);    
+          echo json_encode(['error' => 'Contraseña no puede estar vacia']);    
         }
       }else{
         http_response_code(401);
-        echo json_encode(['message' => 'Usuario no puede estar vacio']);  
+        echo json_encode(['error' => 'Usuario no puede estar vacio']);  
       }
       break;
 
@@ -76,7 +73,7 @@
         }
         catch(PDOException $exception){
           http_response_code(500);
-          echo json_encode(['message' => $exception]);  
+          echo json_encode(['error' => $exception]);  
         } 
       }
   
@@ -85,7 +82,7 @@
     default:
       // método invalido
       http_response_code(405);
-      echo json_encode(['message' => 'Método no permitido']);
+      echo json_encode(['error' => 'Método no permitido']);
       break;
   }
 
