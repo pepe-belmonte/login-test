@@ -1,0 +1,31 @@
+header {
+  /* From https://css.glass */
+  background: var(--header-background);
+  box-shadow: var(--header-shadow);
+  backdrop-filter: blur(16.3px);
+  -webkit-backdrop-filter: blur(16.3px);
+  border: var(--header-border);
+  transition: 0.15s all ease;
+
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  min-width: 360px;
+  width: calc(100% - 16px);
+}
+
+@media screen and (width >= 640px) {
+  header {
+    padding: 8px 16px;
+    margin: 32px auto;
+    min-width: calc(100vw - 32px);
+  }
+}
+@media screen and (width >= 900px) {
+  header {
+    min-width: initial;
+    width: 900px;
+  }
+}
+
+

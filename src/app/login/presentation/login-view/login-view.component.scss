@@ -1,0 +1,49 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+.login-card {
+  background: var(--card-background-solid);
+  border-radius: 16px;
+  color: var(--primary-dark-color);
+  padding: 24px 24px 32px;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .login-image {
+    border-radius: 8px;
+    background-color: #D397FD;
+  }
+
+  fieldset {
+    padding: 4px;
+    min-height: 4.6rem;
+  }
+}
+
+.shake-form {
+  animation: shake 0.25s 3;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}

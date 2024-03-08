@@ -2,7 +2,7 @@
 
 Este proyecto contiene la API rest que debe estar alojada en el servidor.
 
-Está desarrollada en PHP y se trata de una API muy básica que permite el login, consulta y alta de usuarios.
+Está desarrollada en PHP y se trata de una API muy básica que permite el login y el registro de usuarios.
 
 La base de datos de prueba está alojada en mi servidor personal en [pepebelmonte.es](http://www.pepebelmonte.es)
 
@@ -38,7 +38,44 @@ La contraseña está codificada en `base64`, para hacer login el usuario y la co
 
 ```
 INSERT INTO `users` (`id`, `username`, `email`, `active`, `name`, `surname`, `password`, `token`) VALUES
-(1, 'pepe', 'pepe@pepebelmonte.es', 1, 'Pepe', 'Belmonte', 'cGVwZQ==', '');
+(1, 'pepe', 'test@pepebelmonte.es', 1, 'Pepe', 'Belmonte', 'cGVwZQ==', '');
+```
+
+## URLs de prueba
+### Login
+
+Recuperar usuario 
+```
+GET a la url http://www.pepebelmonte.es/api/user/?username=pepe&password=pepe
+```
+
+Devuelve el registro del usuario. El token es simulado, devuelve los datos del usuario codificados en base64
+```
+{
+  "username": "pepe",
+  "email": "test@pepebelmonte.es",
+  "name": "José Antonio",
+  "surname": "Belmonte",
+  "token": "eyJ1c2VybmFtZSI6InBlcGUiLCJlbWFpbCI6InBlcGVAcGVwZWJlbG1vbnRlLmVzIiwibmFtZSI6Ikpvc1x1MDBlOSBBbnRvbmlvIiwic3VybmFtZSI6IkJlbG1vbnRlIn0="
+}
 ```
 
 
+### Creación de usuario (registro)
+
+
+```
+POST a la url http://www.pepebelmonte.es/api/user/
+
+```
+
+Payload de ejemplo
+```
+{
+  "username": "paco",
+  "email": "test@pepebelmonte.es",
+  "name" : "José Antonio",
+  "surname": "Belmonte",
+  "password": "12345"
+}
+```
