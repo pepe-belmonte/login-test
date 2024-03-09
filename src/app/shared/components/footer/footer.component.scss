@@ -5,46 +5,22 @@ footer {
   backdrop-filter: blur(16.3px);
   -webkit-backdrop-filter: blur(16.3px);
   border: var(-footer-border);
-  transition: 0.15s all ease;
 
   border-radius: 8px;
-  padding: 4px;
-  margin: 4px;
-  min-width: 360px;
+  width: calc(100% - 8px);
+  max-width: 900px;
+  margin: 4px 0;
   white-space: nowrap;
   flex-wrap: wrap;
+  padding: 4px 0;
 
-  strong {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    color: var(--secondary-color);
-    animation: gradient 15s ease infinite;
-  }
 }
 
 @media screen and (width >= 640px) {
   footer {
-    border-radius: 8px;
-    padding: 8px 16px;
-    margin: 32px 16px;
-    min-width: calc(100vw - 32px);
-  }
-}
-@media screen and (width >= 900px) {
-  footer {
-    min-width: initial;
-    width: 900px;
+    margin: 32px 0;
+    width: 100%;
   }
 }
 
-@keyframes gradient {
-	0% {
-    color: var(--secondary-color);
-	}
-	50% {
-		color: var(--strong-secondary);
-	}
-	100% {
-		color: var(--strong-tertiary);
-	}
-}
+

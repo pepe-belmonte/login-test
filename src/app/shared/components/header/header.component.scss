@@ -1,4 +1,14 @@
+
+.header-sticker {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+}
+
 header {
+  z-index: 99;
   /* From https://css.glass */
   background: var(--header-background);
   box-shadow: var(--header-shadow);
@@ -8,23 +18,16 @@ header {
   transition: 0.15s all ease;
 
   border-radius: 8px;
-  padding: 4px 8px;
-  margin: 4px 8px;
-  min-width: 360px;
-  width: calc(100% - 16px);
+  width: calc(100% - 8px);
+  max-width: 900px;
+  margin: 4px 0;
+
 }
 
 @media screen and (width >= 640px) {
   header {
-    padding: 8px 16px;
-    margin: 32px auto;
-    min-width: calc(100vw - 32px);
-  }
-}
-@media screen and (width >= 900px) {
-  header {
-    min-width: initial;
-    width: 900px;
+    margin: 32px 0;
+    width: 100%;
   }
 }
 

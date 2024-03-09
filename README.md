@@ -1,27 +1,64 @@
-# LoginTest
+# LoginTest de Pepe Belmonte para el Grupo Orenes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+Este proyecto ha sido generado con  [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 
-## Development server
+Como framework de CSS se ha utilizado [Tailwind](https://tailwindcss.com/) para ahorrar tiempo en la definición de estilos, lo que hace que los ficheros SCSS sean más reducidos y sólo tengan los estilos definidos para cada uno de los componentes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+En el aspecto de seguridad se simula el Token desde el back, codificándolo en Base64. En este Token van los datos del usuario logueado, de forma similar a como se haría con JWT.
 
-## Code scaffolding
+Para el desarrollo se ha seguido una estructura Clean Code, separando las capas de los componentes de vista del resto de la estructura de negocio.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+app 
+  | - Componente\Presentación 
+  |              | - Componentes no compartidos
+  |              | - Vista
+  |
+  | - Shared
+  |   | - apis (Servicios)
+  | - Components (componentes compartido)
+  | - Guard (AuthGuard para el control de acceso al Router)
+  | - Interceptors (interceptores de llamadas de la api - no se utiliza en el proyecto)
+  | - Interfaces (definición de los DTO de entrada)
+  | - Models (definición de los interfaces de salida)
+  | - Servicios comunes (utilidades de control de errores, servicio de autenticación, etc.)
 
-## Build
+assets (iconos, imágenes estáticas, etc.)
+environment (ficheros de configuración de la aplicación)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Arranque en servidor local
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ejecuta `ng serve` para el servidor de desarrollo. Navega a la url `http://localhost:4200/`.
 
-## Further help
+Para arrancar el servidor de API basta con copiar el contenido de la carpeta api-server a un servidor que soporte PHP y MySQL/MariaDB. El servidor tiene su propio fichero README.md
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Generar paquete distribuible
+
+Ejecuta `ng build production` para construir el proyecto. Se generará el distribuible en la carpeta `dist/`.
+
+Ejecuta `ng build development` para construir el proyecto. Se generará el distribuible en la carpeta `dist/`.
+
+Si vas a alojarlo en el servidor dentro de una carpeta deberás hacerlo con `ng build --deploy-url=/carpeta --base-href=/carpeta `
+
+## Fichero de configuración
+
+En la carpeta environment hay dos ficheros de configuración para indicar el servidor de api.
+```
+export const environment = {
+  production: false,
+  apiUrl: 'http://www.pepebelmonte.es/api'
+  //apiUrl: 'http://localhost/api'
+};
+```
+
+## Prueba de la aplicación
+
+Actualmente el proyecto se encuentra alojado en mi servidor personal [pepebelmonte.es/test-orenes](http://www.pepebelmonte.es/test-orenes) y es completamente funcional.
+
+## Otros test
+En mi servidor [pepebelmonte.es/test](http://www.pepebelmonte.es/test) hay otras antiguas pruebas de concepto realizadas para varias empresas, principalmente en HTML, CSS y Javascript.
+

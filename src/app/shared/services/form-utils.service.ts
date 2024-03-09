@@ -36,6 +36,9 @@ export class FormUtilsService {
             case 'required':
               _message = _message.concat('Campo obligatorio') ;
               break;
+            case 'email':
+              _message = _message.concat('Debe ser un email válido') ;
+              break;
             default:
               if (typeof formCtrl.errors[err] == 'boolean'){
                 _message = _message.concat(err) ;

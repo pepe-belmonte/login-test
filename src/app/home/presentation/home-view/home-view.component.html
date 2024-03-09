@@ -1,13 +1,32 @@
-<div class="home">
-  <h1 class="rounded-lg p-2.5 text-gray-200">Bienvenido Pepe Belmonte</h1>
-  <p>Esta es tu página de inicio, creada con grid y totalmente responsive.</p>
+<div class="home fade-in">
+  <h1 class="rounded-lg p-2.5 text-gray-200">Bienvenido <strong>{{userData?.name}}</strong></h1>
+  <p class="p-2.5">Esta es tu página de inicio, creada con grid y totalmente responsive.</p>
+  <p
+    *ngIf="imageSelected != ''" 
+    class="p-2.5">Has seleccionado la imágen {{imageSelected}}</p>
 
-  <div class="home-grid">
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-    <app-card class="card"></app-card>
-  </div>
+  <section class="home-grid">
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="seed/picsum"></app-card>
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="id/159"></app-card>
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="id/182"></app-card>
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="id/231"></app-card>
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="id/259"></app-card>
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="id/292"></app-card>
+    <app-card
+      (clickImage)="onImageSelected($event)" 
+      image="id/376"></app-card>
+  </section>
 
 </div>

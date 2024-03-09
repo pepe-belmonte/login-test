@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AccessGuard } from './shared/guard/access.guard';
 
 export const routes: Routes = [
   {
@@ -6,7 +7,8 @@ export const routes: Routes = [
     loadComponent: () =>
     import('./home/presentation/home-view/home-view.component').then(
       (m) => m.HomeViewComponent
-    )
+    ),
+    canActivate: [AccessGuard]
   },
   { path: 'home', redirectTo: '/', pathMatch: 'full' },
   {

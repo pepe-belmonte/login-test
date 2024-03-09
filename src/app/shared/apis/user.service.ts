@@ -4,6 +4,8 @@ import { LoginInterface } from '../models/login.model';
 import { environment } from '../../../environments/environment';
 import { LoginUserDTO } from '../interfaces/login-user.dto';
 import { Observable } from 'rxjs';
+import { RegisterInterface } from '../models/register.model';
+import { RegisterUserDTO } from '../interfaces/register-user.dto';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +17,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UserService {
   api: string ='';
 
   constructor(
@@ -25,7 +27,12 @@ export class LoginService {
   }
 
   userLogin(loginData: LoginInterface) : Observable<LoginUserDTO> {
-    return this.http.get<LoginUserDTO>(`${this.api}/user/?username=${loginData.username}&password=${loginData.password}`,
-    httpOptions);
+    return this.http.get<LoginUserDTO>(`${this.api}/user/?username=${loginData.username}&password=${loginData.password}`);
   }
+
+  userCreate(registerData: RegisterInterface) : Observable<RegisterUserDTO> {    
+    return this.http.post<RegisterUserDTO>(`${this.api}/user/`,registerData);
+  }
+
+
 }

@@ -1,3 +1,12 @@
-<div class="card p-4 rounded-md min-h-36 w-auto">
-card works
-</div>
+<div 
+  (click)="onClickImage()"
+  class="card cursor-pointer">
+    <img 
+      class="rounded-t-lg aspect-video" 
+      [src]="'https://picsum.photos/' + image + '/640/300'" alt="imágen de picsum.photos" />
+    <div class="p-5">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Imágen de Picsum.photos</h5>
+        <p class="mb-3 font-normal text-gray-700 ">Ejemplo de una tarjeta cualquiera con una imágen aleatoria de phiscum.photos.</p>
+        <p class="mb-3 font-sm text-gray-700">{{image}}</p>
+    </div>
+  </div>

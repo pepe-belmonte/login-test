@@ -1,8 +1,14 @@
 .content {
   flex: 1;
-  padding: 8px;
+  padding: 3.8rem 8px;
+}
+@media screen and (width >= 640px) {
+  .content {
+    padding: 6rem 8px;
+  }
 }
 
-.app-footer {
-  margin-top: auto;
+.footer {
+  display: flex;
+  justify-content: center;
 }

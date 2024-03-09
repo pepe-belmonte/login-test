@@ -3,3 +3,6 @@ RewriteBase /api/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^user/([0-9a-zA-Z_-]*)$ index.php?$1 [QSA]
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
