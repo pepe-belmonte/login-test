@@ -42,7 +42,7 @@ Ejecuta `ng build production` para construir el proyecto. Se generará el distri
 
 Ejecuta `ng build development` para construir el proyecto. Se generará el distribuible en la carpeta `dist/`.
 
-Si vas a alojarlo en el servidor dentro de una carpeta deberás hacerlo con `ng build --deploy-url=/carpeta --base-href=/carpeta `
+Si vas a alojarlo en el servidor dentro de una carpeta deberás hacerlo con `ng build --base-href=/carpeta `
 
 ## Fichero de configuración
 
