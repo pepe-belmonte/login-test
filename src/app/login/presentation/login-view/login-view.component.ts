@@ -27,6 +27,7 @@ export class LoginViewComponent {
   formRegister: FormGroup;
   isLoading: boolean = false;
   isShakeForm: boolean = false; // hay que sacudir el formulario?
+  isHideLoginPassword: boolean = true;
   isHidePassword: boolean = true;
   isHideRepassword: boolean = true;
   isShowPyro: boolean = false;
