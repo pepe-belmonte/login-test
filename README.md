@@ -1,4 +1,4 @@
-# LoginTest de Pepe Belmonte para el Grupo Orenes
+# LoginTest de Pepe Belmonte para el Grupo xxxxx
 
 Este proyecto ha sido generado con  [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 
@@ -57,7 +57,7 @@ export const environment = {
 
 ## Prueba de la aplicación
 
-Actualmente el proyecto se encuentra alojado en mi servidor personal [pepebelmonte.es/test-orenes](http://www.pepebelmonte.es/test-orenes) y es completamente funcional.
+Actualmente el proyecto se encuentra alojado en mi servidor personal [pepebelmonte.es/test-xxxx](http://www.pepebelmonte.es/test-xxxx) y es completamente funcional.
 
 ## Otros test
 En mi servidor [pepebelmonte.es/test](http://www.pepebelmonte.es/test) hay otras antiguas pruebas de concepto realizadas para varias empresas, principalmente en HTML, CSS y Javascript.
